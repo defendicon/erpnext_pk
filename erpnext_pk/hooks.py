@@ -13,7 +13,7 @@ before_install = "erpnext_pk.install.before_install"
 after_install = "erpnext_pk.install.after_install"
 setup_wizard_stages = "erpnext_pk.setup.get_setup_stages"
 
-app_include_js = "/assets/js/erpnext_pk.min.js"
+app_include_js = "/assets/erpnext_pk/js/erpnext_pk.js"
 
 doctype_js = {
 	"Customer": "public/js/customer.js",
@@ -21,7 +21,6 @@ doctype_js = {
 	"Employee": "public/js/employee.js",
 	"Company": "public/js/company.js"
 }
-
 
 doc_events = {
 	"Customer": {
