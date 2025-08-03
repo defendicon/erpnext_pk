@@ -41,11 +41,12 @@ custom_fields = {
 			"insert_after": "further_tax_account"},
 	],
 
-	'Customer': [
-		get_template_field({"fieldname": 'tax_nic', 'insert_after': 'tax_id'}),
-		get_template_field({"fieldname": 'tax_ntn', 'insert_after': 'tax_nic'}),
-		get_template_field({"fieldname": 'tax_strn', 'insert_after': 'tax_ntn'})
-	],
+        'Customer': [
+                get_template_field({"fieldname": 'tax_nic', 'insert_after': 'tax_id'}),
+                get_template_field({"fieldname": 'tax_ntn', 'insert_after': 'tax_nic'}),
+                get_template_field({"fieldname": 'tax_strn', 'insert_after': 'tax_ntn'}),
+                {"label": "Secondary Mobile Number", "fieldname": "custom_secondary_mobile_number", "fieldtype": "Data", "insert_after": "mobile_no"}
+        ],
 
 	'Supplier': [
 		get_template_field({"fieldname": 'tax_nic', 'insert_after': 'pan'}),
@@ -123,9 +124,10 @@ custom_fields = {
 
 # Property Setters
 property_setters = [
-	{"doctype": "Employee", "fieldname": "date_of_issue", "property": "label", "value": "Passport Date of Issue"},
-	{"doctype": "Employee", "fieldname": "valid_upto", "property": "label", "value": "Passport Date of Expiry"},
-	{"doctype": "Employee", "fieldname": "place_of_issue", "property": "label", "value": "Passport Place of Issue"}
+        {"doctype": "Employee", "fieldname": "date_of_issue", "property": "label", "value": "Passport Date of Issue"},
+        {"doctype": "Employee", "fieldname": "valid_upto", "property": "label", "value": "Passport Date of Expiry"},
+        {"doctype": "Employee", "fieldname": "place_of_issue", "property": "label", "value": "Passport Place of Issue"},
+        {"doctype": "Customer", "property": "search_fields", "value": "customer_group,territory, mobile_no,primary_address,custom_secondary_mobile_number", "property_type": "Data"}
 ]
 
 
